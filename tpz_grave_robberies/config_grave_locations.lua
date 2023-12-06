@@ -298,10 +298,4 @@ Locations.Graves = {
         heading = 84.73,
     },
 
-
-    [59] = { -- Guarma
-        name = "Samantha Stone",
-        coords = vector3(1294.104, -6889.27, 44.031),
-        heading = 135.73,
-    },
 }
