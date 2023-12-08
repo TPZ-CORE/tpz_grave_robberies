@@ -194,6 +194,11 @@ Citizen.CreateThread(function()
 
         end
 
+        -- In case the player dies, we detach the shovel and all current data.
+        if ClientData.isHoldingShovel and isPlayerDead then
+            TriggerEvent('tpz_grave_robberies:onShovelItemUse')
+        end
+
         if sleep then
             Citizen.Wait(1000)
         end
