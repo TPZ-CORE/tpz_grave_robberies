@@ -206,15 +206,28 @@ Citizen.CreateThread(function()
     end
 end)
 
-Citizen.CreateThread(function()
+-- The following thread is disabling control actions while player has a shovel attached.
+if Config.KeyControls.Disable then
 
-    while true do
-        Citizen.Wait(1000)
+    Citizen.CreateThread(function()
+        while true do
+            Wait(0)
 
-        if ClientData.isDoingAction then
-            TriggerEvent('tpz_inventory:closePlayerInventory')
+            if ClientData.isHoldingShovel then
+
+                for index, control in pairs (Config.KeyControls.Controls) do
+                    DisableControlAction(0, control)
+                end
+
+                if ClientData.isDoingAction then
+                    DisableControlAction(0, Config.KeyControls.InventoryControl)
+                end
+
+            else
+                Wait(1000)
+            end
         end
+    end)
 
-    end
+end
 
-end)
