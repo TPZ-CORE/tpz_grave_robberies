@@ -43,6 +43,8 @@ OnShovelEquip = function()
     Wait(500)
 
     local playerPed = PlayerPedId()
+
+    SetCurrentPedWeapon(playerPed, GetHashKey("WEAPON_UNARMED"), true, 0, false, false)
     
     LoadModel("p_shovel02x")
 
