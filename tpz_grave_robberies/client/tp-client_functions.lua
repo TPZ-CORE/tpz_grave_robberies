@@ -93,3 +93,11 @@ LoadAnim = function(anim)
     end
 
 end
+
+CanPlayerDoAction = function(player)
+    if IsPedOnMount(player) or IsPedInAnyVehicle(player) or IsPedDeadOrDying(player) or IsEntityInWater(player) or IsPedClimbing(player) or not IsPedOnFoot(player) then
+        return false
+    end
+
+    return true
+end
