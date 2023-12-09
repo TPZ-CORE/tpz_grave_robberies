@@ -126,12 +126,12 @@ Citizen.CreateThread(function()
     while true do
         Citizen.Wait(0)
 
-        local sleep        = true
-        local player       = PlayerPedId()
-        local isPlayerDead = IsEntityDead(player)
-        --local currentTown  = GetCurrentTown()
+        local sleep            = true
+        local player           = PlayerPedId()
+        local isPlayerDead     = IsEntityDead(player)
+        local canPerformAction = CanPlayerDoAction(player)
 
-        if not isPlayerDead and ClientData.isHoldingShovel then
+        if not isPlayerDead and ClientData.isHoldingShovel and canPerformAction then
 
             local coords = GetEntityCoords(player)
 
