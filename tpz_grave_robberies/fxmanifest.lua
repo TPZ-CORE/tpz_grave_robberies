@@ -10,3 +10,4 @@ shared_scripts { 'config.lua', 'config_grave_locations.lua', 'locales.lua' }
 server_scripts { 'server/*.lua' }
 client_scripts { 'client/*.lua' }
 
+lua54 'yes'
