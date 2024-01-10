@@ -44,7 +44,7 @@ OnShovelEquip = function()
 
     local playerPed = PlayerPedId()
 
-    SetCurrentPedWeapon(playerPed, GetHashKey("WEAPON_UNARMED"), true, 0, false, false)
+    SetCurrentPedWeapon(playerPed, joaat("WEAPON_UNARMED"), true, 0, false, false)
     
     LoadModel("p_shovel02x")
 
@@ -79,7 +79,7 @@ GetCurrentTown = function()
 end
 
 LoadModel = function(model)
-    local model = GetHashKey(model)
+    local model = joaat(model)
     RequestModel(model)
 
     while not HasModelLoaded(model) do RequestModel(model)
