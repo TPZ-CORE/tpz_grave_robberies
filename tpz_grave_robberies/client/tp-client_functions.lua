@@ -83,7 +83,7 @@ LoadModel = function(model)
     RequestModel(model)
 
     while not HasModelLoaded(model) do RequestModel(model)
-        Citizen.Wait(10)
+        Citizen.Wait(5)
     end
 end
 
@@ -91,7 +91,7 @@ LoadAnim = function(anim)
 
     RequestAnimDict(anim[1])
     while not HasAnimDictLoaded(anim[1]) do RequestAnimDict(anim[1])
-        Citizen.Wait(100)
+        Citizen.Wait(5)
     end
 
 end
